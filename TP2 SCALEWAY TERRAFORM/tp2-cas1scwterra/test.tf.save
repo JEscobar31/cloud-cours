@@ -1,0 +1,28 @@
+variable "project_id" {
+  type        = string
+  description = "2ff177fd-3df2-472e-8021-0e3022fb7930
+}
+
+terraform {
+  required_providers {
+    scaleway = {
+      source = "scaleway/scaleway"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
+provider "scaleway" {
+  zone   = "fr-par-1"
+  region = "fr-par"
+}
+
+resource "scaleway_rdb_instance" "main" {
+  name           = "tp2-rdb"
+  node_type      = "DB-DEV-S"
+  engine         = "MySQL-8"
+  is_ha_cluster  = false
+  disable_backup = true
+  user_name      = "groupe9"
+  password       = "Groupe99?"
+}
