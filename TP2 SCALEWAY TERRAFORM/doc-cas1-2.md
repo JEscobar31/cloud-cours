@@ -245,6 +245,7 @@ Au final
 
 * Installation de la gateway 
 
+```
 resource "scaleway_vpc_private_network" "pn01" {
   name = "pn_test_network"
 }
@@ -270,7 +271,7 @@ resource "scaleway_vpc_gateway_network" "main" {
   cleanup_dhcp       = true
   enable_masquerade  = true
 }
-
+```
 
 
 
